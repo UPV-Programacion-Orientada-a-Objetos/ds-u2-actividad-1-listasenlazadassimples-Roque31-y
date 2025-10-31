@@ -1,0 +1,44 @@
+<!doctype html><html><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="assets/style.css"><title>Arquitectura</title></head><body>
+
+<div class="header">
+  <div class="title">Sistema IoT Arduino — Sensores</div>
+  <div class="badge">Lista genérica</div>
+  <div class="badge">Polimorfismo</div>
+  <div class="badge">Serial 115200</div>
+</div>
+
+<div class="container">
+
+<div class="sidebar">
+  <div class="card">
+    <div class="title">Contenido</div>
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="classes.html">Índice de clases</a></li>
+      <li><a href="serial.html">Comandos Serial</a></li>
+      <li><a href="architecture.html">Arquitectura</a></li>
+    </ul>
+  </div>
+  <div class="card small">
+    Generado en entorno estático estilo Doxygen.<br>
+    Puedes regenerar con Doxygen usando el Doxyfile que te compartí.
+  </div>
+</div>
+
+<div class="main">
+  <div class="card">
+    <h1>Arquitectura</h1>
+    <p>Diagrama conceptual (texto):</p>
+<pre>
+ListaSensor&lt;T&gt;  -->  Nodo&lt;T&gt;
+SensorTemperatura --|> SensorBase
+SensorPresion    --|> SensorBase
+</pre>
+    <p class="small">Puedes regenerar gráficos UML reales con Doxygen + Graphviz.</p>
+  </div>
+</div></div>
+
+<div class="footer small">Documentación HTML estática estilo Doxygen • Compatible con tu proyecto de Arduino.</div>
+</body></html>

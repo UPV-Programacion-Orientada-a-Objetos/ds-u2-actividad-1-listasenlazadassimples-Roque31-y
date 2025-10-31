@@ -1,0 +1,60 @@
+<!doctype html><html><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="assets/style.css">
+<title>ListaSensor — Referencia</title></head><body>
+
+<div class="header">
+  <div class="title">Sistema IoT Arduino — Sensores</div>
+  <div class="badge">Lista genérica</div>
+  <div class="badge">Polimorfismo</div>
+  <div class="badge">Serial 115200</div>
+</div>
+
+<div class="container">
+
+<div class="sidebar">
+  <div class="card">
+    <div class="title">Contenido</div>
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="classes.html">Índice de clases</a></li>
+      <li><a href="serial.html">Comandos Serial</a></li>
+      <li><a href="architecture.html">Arquitectura</a></li>
+    </ul>
+  </div>
+  <div class="card small">
+    Generado en entorno estático estilo Doxygen.<br>
+    Puedes regenerar con Doxygen usando el Doxyfile que te compartí.
+  </div>
+</div>
+
+<div class="main">
+  <div class="card">
+    <h1>ListaSensor</h1>
+    <p class="small">Lista enlazada genérica sin STL; implementa Regla de los Tres.</p>
+  </div>
+  <div class="card">
+    <h2>Miembros</h2>
+    <table>
+      <tr><th>Ámbito</th><th>Firma</th><th>Descripción</th></tr>
+      <tr><td>struct</td><td><code>template&lt;typename T&gt; struct Nodo { T dato; Nodo&lt;T&gt;* sig; };</code></td><td>Nodo simple de la lista.</td></tr>
+<tr><td>private</td><td><code>Nodo&lt;T&gt;* cabeza;</code></td><td>Cabeza de la lista.</td></tr>
+<tr><td>private</td><td><code>void copiarDesde(const ListaSensor&amp; otra)</code></td><td>Copia profunda.</td></tr>
+<tr><td>private</td><td><code>void liberar()</code></td><td>Libera todos los nodos.</td></tr>
+<tr><td>public</td><td><code>ListaSensor()</code></td><td>Crea lista vacía.</td></tr>
+<tr><td>public</td><td><code>ListaSensor(const ListaSensor&amp; otra)</code></td><td>Constructor copia (deep copy).</td></tr>
+<tr><td>public</td><td><code>ListaSensor&amp; operator=(const ListaSensor&amp; otra)</code></td><td>Asignación (deep copy).</td></tr>
+<tr><td>public</td><td><code>~ListaSensor()</code></td><td>Destructor.</td></tr>
+<tr><td>public</td><td><code>void insertar(T valor)</code></td><td>Inserta al final.</td></tr>
+<tr><td>public</td><td><code>bool busqueda(T valor) const</code></td><td>Busca valor.</td></tr>
+<tr><td>public</td><td><code>int obtenerTamanio() const</code></td><td>Devuelve cantidad de elementos.</td></tr>
+<tr><td>public</td><td><code>bool eliminarValor(T valor)</code></td><td>Elimina primera coincidencia.</td></tr>
+<tr><td>public</td><td><code>Nodo&lt;T&gt;* obtenerCabeza() const</code></td><td>Acceso de solo lectura para recorrer.</td></tr>
+    </table>
+  </div>
+  <div class="card small">Volver a <a href="classes.html">Índice de clases</a></div>
+</div></div>
+
+<div class="footer small">Documentación HTML estática estilo Doxygen • Compatible con tu proyecto de Arduino.</div>
+
+</body></html>

@@ -1,0 +1,63 @@
+<!doctype html><html><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="assets/style.css">
+<title>Inicio — Sistema IoT Arduino</title></head><body>
+
+<div class="header">
+  <div class="title">Sistema IoT Arduino — Sensores</div>
+  <div class="badge">Lista genérica</div>
+  <div class="badge">Polimorfismo</div>
+  <div class="badge">Serial 115200</div>
+</div>
+
+<div class="container">
+
+<div class="sidebar">
+  <div class="card">
+    <div class="title">Contenido</div>
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="classes.html">Índice de clases</a></li>
+      <li><a href="serial.html">Comandos Serial</a></li>
+      <li><a href="architecture.html">Arquitectura</a></li>
+    </ul>
+  </div>
+  <div class="card small">
+    Generado en entorno estático estilo Doxygen.<br>
+    Puedes regenerar con Doxygen usando el Doxyfile que te compartí.
+  </div>
+</div>
+
+<div class="main">
+  <div class="card">
+    <h1>Bienvenido</h1>
+    <p>Esta documentación describe una implementación educativa de:</p>
+    <ul>
+      <li><b>Lista enlazada genérica</b> (<code>ListaSensor&lt;T&gt;</code>) <i>sin STL</i> con Regla de los Tres.</li>
+      <li>Jerarquía <b>polimórfica</b>: <code>SensorBase</code>, <code>SensorTemperatura</code>, <code>SensorPresion</code>.</li>
+      <li>Simulación por <b>Serial</b> (115200) para crear sensores, registrar lecturas y procesarlas.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>Archivos principales</h2>
+    <table>
+      <tr><th>Archivo</th><th>Descripción</th></tr>
+      <tr><td><code>ListaSensor.h</code></td><td>Lista enlazada simple de lecturas (insertar, buscar, eliminar, tamaño).</td></tr>
+      <tr><td><code>SensorBase.h</code></td><td>Clase base abstracta; define la interfaz común.</td></tr>
+      <tr><td><code>SensorTemperatura.h</code></td><td>Implementa política &ldquo;eliminar mínimo y promediar resto&rdquo;.</td></tr>
+      <tr><td><code>SensorPresion.h</code></td><td>Implementa política de promedio de todas las lecturas.</td></tr>
+      <tr><td><code>app.cpp / .ino</code></td><td>Gestor polimórfico: parser de comandos, listado y procesamiento.</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h2>Cómo leer esta documentación</h2>
+    <p>Usa el <a href="classes.html">Índice de clases</a> para navegar por la referencia de API. También puedes revisar
+    la <a href="serial.html">tabla de comandos</a> y la <a href="architecture.html">arquitectura</a>.</p>
+  </div>
+</div></div>
+
+<div class="footer small">Documentación HTML estática estilo Doxygen • Compatible con tu proyecto de Arduino.</div>
+
+</body></html>

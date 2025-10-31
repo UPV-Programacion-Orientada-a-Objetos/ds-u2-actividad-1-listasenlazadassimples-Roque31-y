@@ -1,0 +1,56 @@
+<!doctype html><html><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="assets/style.css"><title>Comandos Serial</title></head><body>
+
+<div class="header">
+  <div class="title">Sistema IoT Arduino — Sensores</div>
+  <div class="badge">Lista genérica</div>
+  <div class="badge">Polimorfismo</div>
+  <div class="badge">Serial 115200</div>
+</div>
+
+<div class="container">
+
+<div class="sidebar">
+  <div class="card">
+    <div class="title">Contenido</div>
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="classes.html">Índice de clases</a></li>
+      <li><a href="serial.html">Comandos Serial</a></li>
+      <li><a href="architecture.html">Arquitectura</a></li>
+    </ul>
+  </div>
+  <div class="card small">
+    Generado en entorno estático estilo Doxygen.<br>
+    Puedes regenerar con Doxygen usando el Doxyfile que te compartí.
+  </div>
+</div>
+
+<div class="main">
+  <div class="card">
+    <h1>Comandos por Serial</h1>
+    <p>Velocidad: <code>115200</code>.</p>
+    <table>
+      <tr><th>Comando</th><th>Descripción</th><th>Ejemplo</th></tr>
+      <tr><td><code>CT:&lt;ID&gt;</code></td><td>Crea sensor de <b>Temperatura</b></td><td><code>CT:T-001</code></td></tr>
+      <tr><td><code>CP:&lt;ID&gt;</code></td><td>Crea sensor de <b>Presión</b></td><td><code>CP:P-105</code></td></tr>
+      <tr><td><code>RT:&lt;ID&gt;:&lt;float&gt;</code></td><td>Registra lectura de temperatura</td><td><code>RT:T-001:45.3</code></td></tr>
+      <tr><td><code>RP:&lt;ID&gt;:&lt;int&gt;</code></td><td>Registra lectura de presión</td><td><code>RP:P-105:82</code></td></tr>
+      <tr><td><code>PROC</code></td><td>Procesa todos los sensores</td><td><code>PROC</code></td></tr>
+      <tr><td><code>LIST</code></td><td>Muestra información de sensores</td><td><code>LIST</code></td></tr>
+      <tr><td><code>DELALL</code></td><td>Libera toda la memoria</td><td><code>DELALL</code></td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h2>Política de procesamiento</h2>
+    <ul>
+      <li><b>Temperatura:</b> elimina la lectura <i>más baja</i> y promedia el resto.</li>
+      <li><b>Presión:</b> promedia <i>todas</i> las lecturas.</li>
+    </ul>
+  </div>
+</div></div>
+
+<div class="footer small">Documentación HTML estática estilo Doxygen • Compatible con tu proyecto de Arduino.</div>
+</body></html>

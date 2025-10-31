@@ -1,0 +1,53 @@
+<!doctype html><html><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="assets/style.css">
+<title>SensorBase — Referencia</title></head><body>
+
+<div class="header">
+  <div class="title">Sistema IoT Arduino — Sensores</div>
+  <div class="badge">Lista genérica</div>
+  <div class="badge">Polimorfismo</div>
+  <div class="badge">Serial 115200</div>
+</div>
+
+<div class="container">
+
+<div class="sidebar">
+  <div class="card">
+    <div class="title">Contenido</div>
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="classes.html">Índice de clases</a></li>
+      <li><a href="serial.html">Comandos Serial</a></li>
+      <li><a href="architecture.html">Arquitectura</a></li>
+    </ul>
+  </div>
+  <div class="card small">
+    Generado en entorno estático estilo Doxygen.<br>
+    Puedes regenerar con Doxygen usando el Doxyfile que te compartí.
+  </div>
+</div>
+
+<div class="main">
+  <div class="card">
+    <h1>SensorBase</h1>
+    <p class="small">Clase base abstracta para sensores (interfaz polimórfica).</p>
+  </div>
+  <div class="card">
+    <h2>Miembros</h2>
+    <table>
+      <tr><th>Ámbito</th><th>Firma</th><th>Descripción</th></tr>
+      <tr><td>protected</td><td><code>char nombre[50];</code></td><td>Nombre del sensor (C-string).</td></tr>
+<tr><td>public</td><td><code>explicit SensorBase(const char* nombreSensor)</code></td><td>Constructor con nombre.</td></tr>
+<tr><td>public</td><td><code>virtual ~SensorBase()</code></td><td>Destructor virtual.</td></tr>
+<tr><td>public</td><td><code>virtual void procesarLectura() = 0</code></td><td>Procesamiento específico por tipo (polimórfico).</td></tr>
+<tr><td>public</td><td><code>virtual void mostrarInfo() const = 0</code></td><td>Imprime información del sensor.</td></tr>
+<tr><td>public</td><td><code>const char* obtenerNombre() const</code></td><td>Devuelve el nombre del sensor.</td></tr>
+    </table>
+  </div>
+  <div class="card small">Volver a <a href="classes.html">Índice de clases</a></div>
+</div></div>
+
+<div class="footer small">Documentación HTML estática estilo Doxygen • Compatible con tu proyecto de Arduino.</div>
+
+</body></html>

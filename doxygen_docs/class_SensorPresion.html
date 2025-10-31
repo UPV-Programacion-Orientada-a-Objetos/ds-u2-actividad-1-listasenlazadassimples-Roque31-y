@@ -1,0 +1,52 @@
+<!doctype html><html><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="assets/style.css">
+<title>SensorPresion — Referencia</title></head><body>
+
+<div class="header">
+  <div class="title">Sistema IoT Arduino — Sensores</div>
+  <div class="badge">Lista genérica</div>
+  <div class="badge">Polimorfismo</div>
+  <div class="badge">Serial 115200</div>
+</div>
+
+<div class="container">
+
+<div class="sidebar">
+  <div class="card">
+    <div class="title">Contenido</div>
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="classes.html">Índice de clases</a></li>
+      <li><a href="serial.html">Comandos Serial</a></li>
+      <li><a href="architecture.html">Arquitectura</a></li>
+    </ul>
+  </div>
+  <div class="card small">
+    Generado en entorno estático estilo Doxygen.<br>
+    Puedes regenerar con Doxygen usando el Doxyfile que te compartí.
+  </div>
+</div>
+
+<div class="main">
+  <div class="card">
+    <h1>SensorPresion</h1>
+    <p class="small">Sensor de presión con historial int; promedia todas las lecturas.</p>
+  </div>
+  <div class="card">
+    <h2>Miembros</h2>
+    <table>
+      <tr><th>Ámbito</th><th>Firma</th><th>Descripción</th></tr>
+      <tr><td>private</td><td><code>ListaSensor&lt;int&gt; historial;</code></td><td>Lista de lecturas.</td></tr>
+<tr><td>public</td><td><code>explicit SensorPresion(const char* nombreSensor)</code></td><td>Construye el sensor.</td></tr>
+<tr><td>public</td><td><code>void registrarLectura(int valor)</code></td><td>Agrega una lectura.</td></tr>
+<tr><td>public</td><td><code>void procesarLectura() override</code></td><td>Promedia todas las lecturas.</td></tr>
+<tr><td>public</td><td><code>void mostrarInfo() const override</code></td><td>Muestra información.</td></tr>
+    </table>
+  </div>
+  <div class="card small">Volver a <a href="classes.html">Índice de clases</a></div>
+</div></div>
+
+<div class="footer small">Documentación HTML estática estilo Doxygen • Compatible con tu proyecto de Arduino.</div>
+
+</body></html>

@@ -1,0 +1,74 @@
+## Doxyfile.in - enhanced template configured by CMake
+## This template provides a comprehensive set of options for API
+## documentation including a main page, examples, diagrams and source
+## browsing. CMake will configure it into the build directory.
+
+PROJECT_NAME           = "@PROJECT_NAME@"
+PROJECT_BRIEF          = "@PROJECT_DESCRIPTION@"
+PROJECT_NUMBER         = @PROJECT_VERSION@
+
+# Output location (relative to source directory)
+OUTPUT_DIRECTORY       = "@CMAKE_SOURCE_DIR@/doxygen_docs"
+CREATE_SUBDIRS         = YES
+OUTPUT_LANGUAGE        = English
+QUIET                  = NO
+WARNINGS               = YES
+
+# Extract all documented and undocumented members (useful for teaching)
+EXTRACT_ALL            = YES
+EXTRACT_PRIVATE        = YES
+EXTRACT_STATIC         = YES
+EXTRACT_LOCAL_CLASSES  = YES
+WARN_IF_UNDOCUMENTED   = YES
+WARN_NO_PARAMDOC       = YES
+
+# Input: limit to source + docs so examples and supplementary files are included
+INPUT                  = "@CMAKE_SOURCE_DIR@" "@CMAKE_SOURCE_DIR@/docs"
+RECURSIVE              = YES
+FILE_PATTERNS          = *.h *.hpp *.cpp *.c *.md *.dox
+EXCLUDE                = "@CMAKE_SOURCE_DIR@/build" "@CMAKE_SOURCE_DIR@/doxygen_docs"
+
+# Examples path (used by @example)
+EXAMPLE_PATH           = "@CMAKE_SOURCE_DIR@/docs/examples"
+EXAMPLE_PATTERNS       = *.cpp *.c *.txt
+
+# HTML output
+GENERATE_HTML          = YES
+HTML_OUTPUT            = html
+GENERATE_LATEX         = NO
+GENERATE_MAN           = NO
+GENERATE_RTF           = NO
+GENERATE_XML           = NO
+GENERATE_TREEVIEW      = YES
+
+# Source browsing and inline sources
+SOURCE_BROWSER         = YES
+INLINE_SOURCES         = YES
+REFERENCED_BY_RELATION = YES
+REFERENCES_RELATION    = YES
+FULL_PATH_NAMES        = YES
+STRIP_FROM_PATH        = "@CMAKE_SOURCE_DIR@"
+
+# Diagrams and Graphviz
+HAVE_DOT               = YES
+DOT_IMAGE_FORMAT       = svg
+CLASS_DIAGRAMS         = YES
+CALL_GRAPH             = YES
+CALLER_GRAPH           = YES
+DOT_PATH               =
+DOTFILE_DIRS           =
+
+# Enable Markdown support and MathJax (if desired)
+MARKDOWN_SUPPORT       = YES
+USE_MATHJAX            = YES
+MATHJAX_RELPATH        = https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+# Additional options
+GENERATE_AUTOGEN_DEF   = YES
+
+# Tag file (if integrating with other projects)
+GENERATE_TAGFILE       =
+
+# HTML styling hooks (optional): put custom css in doxygen_docs and set path here
+HTML_EXTRA_STYLESHEET  =
+

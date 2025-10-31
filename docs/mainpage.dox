@@ -1,0 +1,63 @@
+/** \mainpage Sistema IoT de Monitoreo Polimórfico
+
+\section intro_sec Introducción
+
+Este proyecto implementa un sistema de gestión polimórfica de sensores para
+IoT que satisface los requisitos del caso de estudio de la asignatura. El
+objetivo es ofrecer una infraestructura de bajo nivel que permita registrar,
+almacenar y procesar lecturas de sensores heterogéneos (temperatura, presión,
+vibración) usando C++ moderno (plantillas y polimorfismo) pero sin contenedores
+STL para las estructuras de lista.
+
+\section design_sec Diseño y componentes
+
+- \b SensorBase: Clase base abstracta que define la interfaz común (registro,
+  procesamiento e impresión de información).
+- \b SensorTemperatura: Sensor concreto que maneja lecturas \c float.
+- \b SensorPresion: Sensor concreto que maneja lecturas \c int.
+- \b SensorVibracion: Sensor concreto que maneja conteos de vibración (\c int).
+- \b ListaSensor<T>: Implementación de una lista enlazada simple genérica con
+  manejo manual de memoria (Regla de los Tres aplicada).
+- \b SistemaGestion: Lista no genérica de punteros a \c SensorBase que permite
+  el manejo polimórfico de sensores.
+
+\section usage_sec Uso y ejecución
+
+Compila y ejecuta el binario principal (ej. en Windows PowerShell):
+
+\code{.powershell}
+cd "C:\\ruta\\al\\proyecto"
+g++ -o sensor_system.exe main.cpp SensorSystem.cpp -std=c++11
+.\\sensor_system.exe
+\endcode
+
+Dentro del programa encontrarás un menú interactivo para crear sensores,
+registrar lecturas simuladas, ejecutar el procesamiento polimórfico y ver el
+estado actual.
+
+\section docs_sec Documentación generada
+
+La documentación generada contiene:
+- Página principal (esta página)
+- Documentación de todas las clases y métodos
+- Diagrama de clases (si Graphviz está instalado)
+- Ejemplos en la sección "Examples"
+
+\section build_docs Compilar la documentación
+
+Si usas CMake y Doxygen está instalado, desde la carpeta \c build:
+
+\code{.powershell}
+cmake ..
+cmake --build . --target doc
+\endcode
+
+La salida HTML estará en la carpeta \c doxygen_docs/html.
+
+\section notes Notas finales
+
+Este repositorio se diseñó para fines docentes: muchas de las decisiones (como
+EXTRACT_ALL = YES) están pensadas para facilitar la enseñanza y facilitar la
+visualización completa del código en la documentación.
+
+*/
