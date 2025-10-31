@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/sensor_manager.dir/main.cpp.o CMakeFiles/sensor_manager.dir/serial_linux.cpp.o CMakeFiles/sensor_manager.dir/SensorSystem.cpp.o -o sensor_manager 

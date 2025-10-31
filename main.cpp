@@ -1,4 +1,5 @@
 #include "SensorSystem.h"
+#include "serial_linux.h"
 #include <cstdlib>
 #include <ctime>
 #include <sstream>
@@ -27,6 +28,7 @@ void menu(SistemaGestion& sistema) {
         std::cout << "5. Ejecutar Procesamiento Polimórfico\n";
         std::cout << "6. Imprimir Info de Sensores\n";
         std::cout << "7. Cerrar Sistema (Liberar Memoria)\n";
+        std::cout << "8. Leer una linea desde Serial (/dev/ttyUSB0) y registrar\n";
         std::cout << "Opcion: ";
         
         if (!(std::cin >> opcion)) {
@@ -107,6 +109,46 @@ void menu(SistemaGestion& sistema) {
                 std::cout << "Iniciando cierre del sistema...\n";
                 break;
             }
+            case 8: {
+                std::cout << "Leyendo una linea de /dev/ttyUSB0 ...\n";
+                std::string s = readLineFromSerial("/dev/ttyUSB0", 115200);
+                if(s.empty()){
+                    std::cout << "[Timeout] No se recibio nada.\n";
+                    break;
+                }
+                // Espera "T,T-001,27.8" ó "P,P-105,81" ó "V,V-001,15"
+                char tipo = 0;
+                std::string id, valstr;
+                size_t p1 = s.find(','), p2 = (p1==std::string::npos) ? std::string::npos : s.find(',', p1+1);
+                if(p1!=std::string::npos && p2!=std::string::npos){
+                    tipo = s[0];
+                    id = s.substr(p1+1, p2-(p1+1));
+                    valstr = s.substr(p2+1);
+                }
+                if(!tipo || id.empty() || valstr.empty()){
+                    std::cout << "[ERR] Formato invalido: " << s << "\n";
+                    break;
+                }
+                auto sensor = sistema.buscarSensor(id.c_str());
+                if(!sensor){
+                    std::cout << "[WARN] Sensor '" << id << "' no existe. Creandolo...\n";
+                    if(tipo=='T' || tipo=='t') sistema.agregarSensor(new SensorTemperatura(id.c_str()));
+                    else if(tipo=='P' || tipo=='p') sistema.agregarSensor(new SensorPresion(id.c_str()));
+                    else if(tipo=='V' || tipo=='v') sistema.agregarSensor(new SensorVibracion(id.c_str()));
+                    sensor = sistema.buscarSensor(id.c_str());
+                }
+                try {
+                    float valor = std::stof(valstr);
+                    if(sensor){
+                        sensor->registrarLectura(valor);
+                        std::cout << "[OK] " << id << " <- " << valor << "\n";
+                    }
+                } catch(...) {
+                    std::cout << "[ERR] Valor no numerico: " << valstr << "\n";
+                }
+                break;
+            }
+
             default:
                 std::cout << "Opcion no valida.\n";
         }

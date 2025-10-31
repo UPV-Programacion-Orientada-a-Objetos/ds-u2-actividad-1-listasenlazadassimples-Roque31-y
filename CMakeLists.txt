@@ -8,6 +8,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 # Definir los archivos fuente
 set(SOURCE_FILES
     main.cpp
+    serial_linux.cpp
     SensorSystem.cpp
 )
 
